@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#ffffff"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:id="@+id/meanage_login_content"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:background="@drawable/ringtone_item_more_dialog_selector"
+        android:clickable="true"
+        android:paddingBottom="5dip"
+        android:paddingLeft="10dip"
+        android:paddingTop="5dip">
+
+        <com.android.common.view.RoundedImageView
+            android:id="@+id/meanage_login_imag"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_centerVertical="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/user_unregister"
+            app:riv_border_color="@color/transparent"
+            app:riv_border_width="0.5dp"
+            app:riv_corner_radius="90dp" />
+
+        <LinearLayout
+            android:id="@+id/login_ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/meanage_login_page"
+            android:layout_toRightOf="@id/meanage_login_imag"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/meanage_login_nickName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:text="@string/un_login"
+                android:textColor="@color/title_color"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/meanage_login_phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="3dp"
+                android:textColor="@color/ring_item_times_text"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/meanage_login_page"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="3dp"
+            android:background="@drawable/shape_gray_frame_bg"
+            android:drawablePadding="5dp"
+            android:drawableRight="@drawable/me_manager_arrow"
+            android:gravity="center"
+            android:text="个人主页"
+            android:textColor="@color/com_check_phone_tv"
+            android:textSize="12sp" />
+
+
+    </RelativeLayout>
+
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="0.5dp"
+        android:background="#e0e0e0" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="55dp">
+
+        <RelativeLayout
+            android:id="@+id/order_manager_layout"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/ringtone_item_more_dialog_selector"
+            android:clickable="true">
+
+            <TextView
+                android:id="@+id/order_manager"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/order_manager"
+                android:gravity="center"
+                android:textColor="@color/ring_item_time_text"
+                android:textSize="@dimen/dimen_12_sp" />
+
+            <ImageView
+                android:id="@+id/k_song_red_tip"
+                android:layout_width="8dp"
+                android:layout_height="8dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@+id/order_manager"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center_vertical"
+            android:background="#e0e0e0" />
+
+        <RelativeLayout
+            android:id="@+id/message_shop"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/ringtone_item_more_dialog_selector"
+            android:clickable="true">
+
+            <TextView
+                android:id="@+id/ring_message_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:singleLine="true"
+                android:text="@string/message_shopping"
+                android:textColor="@color/ring_item_time_text"
+                android:textSize="@dimen/dimen_12_sp" />
+
+            <TextView
+                android:id="@+id/msg_red_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:layout_marginTop="5dp"
+                android:layout_toRightOf="@id/ring_message_tv"
+                android:gravity="center"
+                android:paddingLeft="3.5dp"
+                android:paddingRight="3.5dp"
+                android:text="0"
+                android:textColor="@color/white"
+                android:textSize="@dimen/rington_item_small"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center_vertical"
+            android:background="#e0e0e0" />
+
+        <RelativeLayout
+            android:id="@+id/member_card_ll"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/ringtone_item_more_dialog_selector"
+            android:clickable="true">
+
+            <TextView
+                android:id="@+id/manager_friend_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:text="@string/member_card"
+                android:textColor="@color/ring_item_time_text"
+                android:textSize="@dimen/dimen_12_sp" />
+
+            <TextView
+                android:id="@+id/msg_friend_red_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:layout_marginTop="5dp"
+                android:layout_toRightOf="@id/manager_friend_title"
+                android:gravity="center"
+                android:paddingLeft="3.5dp"
+                android:paddingRight="3.5dp"
+                android:text="0"
+                android:textColor="@color/white"
+                android:textSize="@dimen/rington_item_small"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center_vertical"
+            android:background="#e0e0e0" />
+
+        <RelativeLayout
+            android:id="@+id/member_card_score"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/ringtone_item_more_dialog_selector"
+            android:clickable="true">
+
+            <TextView
+                android:id="@+id/logo_ring_get_gif"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:gravity="center"
+                android:text="@string/member_card_score"
+                android:textColor="@color/ring_item_time_text"
+                android:textSize="@dimen/dimen_12_sp" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/divider1"
+        android:layout_width="fill_parent"
+        android:layout_height="6dp"
+        android:background="@color/view_bg" />
+
+
+    <RelativeLayout
+        android:id="@+id/setting_ll"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/manage_height"
+        android:background="@drawable/ringtone_item_more_dialog_selector"
+        android:clickable="true"
+        android:paddingBottom="5dip"
+        android:paddingLeft="15dip"
+        android:paddingTop="5dip">
+
+        <ImageView
+            android:id="@+id/logo_statusText1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
+            android:scaleType="centerInside"
+             />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="8dip"
+            android:layout_toLeftOf="@+id/logo2"
+            android:layout_toRightOf="@+id/logo_statusText1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/statusText1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:gravity="left|center"
+                android:singleLine="true"
+                android:text="@string/settting"
+                android:textColor="@color/client_text1"
+                android:textSize="@dimen/manage_name" />
+
+            <TextView
+                android:id="@+id/select_music1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:gravity="left|center"
+                android:singleLine="true"
+                android:textColor="@color/select_music_bg"
+                android:textSize="@dimen/dimen_11_sp"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/logo2"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dip"
+            android:src="@drawable/manage_icon_right_view" />
+    </RelativeLayout>
+
+
+
+
+</LinearLayout>

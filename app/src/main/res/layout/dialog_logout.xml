@@ -1,0 +1,100 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/transparent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:background="@color/background_color"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_title_msg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_alignParentTop="true"
+            android:gravity="center"
+            android:paddingLeft="15dip"
+            android:paddingRight="15dip"
+            android:paddingTop="6dip"
+            android:singleLine="true"
+            android:text="提示"
+            android:textColor="@color/green3"
+            android:textSize="15sp"
+            />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:maxHeight="300dp"
+            android:layout_height="wrap_content"
+            android:background="@color/white">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_logoutdialog_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:includeFontPadding="false"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:background="@color/white"
+                    android:gravity="center"
+                    android:paddingTop="15dip"
+                    android:paddingBottom="20dip"
+                    android:paddingLeft="10dip"
+                    android:paddingRight="10dip"
+                    android:text="是否退出登录？"
+                    android:textColor="@color/client_text2"
+                    android:textSize="14dip" />
+
+            </LinearLayout>
+
+        </ScrollView>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="#848484" />
+
+        <LinearLayout
+            android:id="@+id/bt_dailog_view"
+            android:layout_width="match_parent"
+            android:layout_height="50dip"
+            android:background="@drawable/transparent">
+
+            <Button
+                android:id="@+id/bt_logout_dailog_cancle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/transparent"
+                android:text="取消"
+                android:textColor="@color/gray"
+                android:textSize="15sp" />
+
+            <View
+                android:id="@+id/lineView"
+                android:layout_width="1px"
+                android:layout_height="match_parent"
+                android:background="#848484" />
+
+            <Button
+                android:id="@+id/bt_logout_dailog_exit"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/transparent"
+                android:singleLine="true"
+                android:text="确定"
+                android:textColor="@color/green3"
+                android:textSize="15sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

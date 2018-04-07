@@ -1,0 +1,25 @@
+<resources>
+    <dimen name="dimen_3dp">3dp</dimen>
+    <dimen name="dimen_5dp">5dp</dimen>
+    <dimen name="dimen_8dp">8dp</dimen>
+    <dimen name="dimen_10dp">10dp</dimen>
+    <dimen name="dimen_15dp">15dp</dimen>
+
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="title_size">17sp</dimen>
+    <dimen name="dimen_15_sp">15sp</dimen>
+    <dimen name="dimen_14_sp">14sp</dimen>
+    <dimen name="dimen_13_sp">13sp</dimen>
+    <dimen name="dimen_16_sp">16sp</dimen>
+    <dimen name="dimen_12_sp">12sp</dimen>
+    <dimen name="dimen_11_sp">11sp</dimen>
+    <dimen name="ring_register_edit_hight">45dp</dimen>
+    <dimen name="check_margin_left">30dp</dimen>
+    <dimen name="rington_item_small">10sp</dimen>
+
+    <!-- 管理首页尺寸 -->
+    <dimen name="manage_height">50dip</dimen>
+    <dimen name="manage_name">15dip</dimen>
+    <dimen name="manage_time">12dip</dimen>
+    <dimen name="manage_height_item">50dip</dimen>
+</resources>

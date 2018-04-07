@@ -1,0 +1,26 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <!--<style name="mystyle" parent="android:Animation">-->
+        <!--<item name="@android:windowEnterAnimation">@anim/dialog_enter</item>-->
+        <!--&lt;!&ndash; //进入时的动画 &ndash;&gt;-->
+        <!--<item name="@android:windowExitAnimation">@anim/dialog_exit</item>-->
+        <!--&lt;!&ndash; //退出时的动画 &ndash;&gt;-->
+    <!--</style>-->
+
+    <style name="progress">
+        <item name="android:indeterminateDrawable">@drawable/progressbar</item>
+        <item name="android:minWidth">20dip</item>
+        <item name="android:maxWidth">20dip</item>
+        <item name="android:minHeight">20dip</item>
+        <item name="android:maxHeight">20dip</item>
+    </style>
+
+</resources>

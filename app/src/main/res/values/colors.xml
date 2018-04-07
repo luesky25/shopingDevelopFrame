@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="textColor_dark_gray_three">#a0a0a0</color>
+
+    <!-- 首页tab颜色 -->
+
+    <color name="gray">#ff999999</color>
+    <color name="title">#AAB9BC</color>
+    <color name="list_letter_color">#aab9bc</color>
+    <color name="t">#b0000000</color>
+    <color name="selected">#0066CC</color>
+    <color name="white">#ffffff</color>
+    <color name="black">#ff000000</color>
+    <color name="transparent">#00000000</color>
+    <color name="item_divider">#e0e0e0</color>
+    <color name="list_item_press_color">#e6e6e6</color>
+    <color name="picture_outline">#b3b3b3</color>
+    <color name="link">#F2EEE4</color>
+    <color name="client_text1">#313131</color>
+    <color name="client_text2">#777777</color>
+    <color name="client_text3">#999999</color>
+    <color name="scrollbar">#06cc79</color>
+    <color name="make_ring_but_bg">#2fd892</color>
+    <color name="resident_pressed">#ffae00</color>
+    <color name="home_text">#684526</color>
+    <color name="bg_color">#FFFBF0</color>
+    <color name="hint">#d0d0d0</color>
+    <color name="progress">#F4EFE1</color>
+    <color name="scrollbar2">#E67800</color>
+    <color name="my_selected">#FFFBF0</color>
+    <color name="my_default">#F2EEE4</color>
+    <color name="my_selected_line">#D7CDB3</color>
+    <color name="ringtone_set_btu_bg">#F2F2F2</color>
+
+    <color name="waveform_selected">#90000000</color>
+    <color name="waveform_unselected">#ff000000</color>
+    <color name="waveform_unselected_bkgnd_overlay">#e0000000</color>
+    <color name="selection_border">#ff000000</color>
+    <color name="playback_indicator">#ffff66</color>
+    <color name="grid_line">#ee01a9a9</color>
+    <color name="timecode">#ddffffdd</color>
+    <color name="timecode_shadow">#aa000000</color>
+    <color name="type_bkgnd_alarm">#88880000</color>
+    <color name="type_bkgnd_ringtone">#88008888</color>
+    <color name="type_bkgnd_notification">#88666600</color>
+    <color name="type_bkgnd_music">#88000000</color>
+    <color name="type_bkgnd_unsupported">#88cccccc</color>
+
+    <color name="text_title">#1E1E1E</color>
+    <color name="title_bg">#4ED3DD</color>
+    <color name="view_bg">#eff3f5</color>
+    <color name="make_music_bg">#dfe7e7</color>
+    <color name="select_music_bg">#B6B6B6</color>
+
+    <!-- KGMain -->
+    <color name="bottom_bar_sel_text">#11c379</color>
+    <color name="bottom_bar_nosel_text">#74797B</color>
+    <color name="button_color">#a9b8b6</color>
+    <!-- end KGMain -->
+
+
+    <!-- KGRecommend -->
+    <color name="Recommend_title_text">#4dd2dc</color>
+    <color name="Recommend_title_memo">#c6c6c6</color>
+    <color name="Recommend_bg_colore">#eeeeee</color>
+    <color name="Recommend_ringtone_title_colore">#272727</color>
+    <color name="Recommend_ringtone_fail">#d83e2f</color>
+    <!-- end KGRecommend -->
+
+
+    <!-- oder_color -->
+    <color name="color_original_price">#878787</color>
+    <color name="color_member_price">#407ab6</color>
+    <!-- end oder_color -->
+
+    <color name="search_text">#d4d4d4</color>
+
+
+    <!-- 推荐页 -->
+    <color name="ring_tab_best_hot_text_selected">#fd9600</color>
+    <color name="ring_tab_pack_ring_text_selected">#21c782</color>
+    <color name="ring_tab_rbt_ranking_text_selected">#49aff6</color>
+    <color name="ring_tab_best_hot_bottom_line">#ff9700</color>
+    <color name="ring_tab_pack_ring_bottom_line">#22c782</color>
+    <color name="ring_tab_rbt_ranking_bottom_line">#49aff7</color>
+
+    <color name="ring_tab_text_normal">#586a65</color>
+    <color name="ring_tab_bottom_splitter_line">#e0e0e0</color>
+    <color name="ring_item_title_text">#333333</color>
+    <color name="ring_item_small_title_text">#676767</color>
+    <color name="ring_item_times_text">#a0a0a0</color>
+    <color name="ring_item_time_text">#a0a0a0</color>
+    <color name="ring_item_memo_text">#a0a0a0</color>
+    <color name="ring_item_bg_color">#DEE5EA</color>
+    <color name="ring_item_bg_sel_color">#cfd8de</color>
+    <color name="ring_item_btn_normal_color">#818F99</color>
+    <color name="ring_item_btn_none_color">#bbccc9</color>
+    <color name="ring_item_btn_unenable_color">#bbccc9</color>
+    <color name="ring_item_more_text">#939b9c</color>
+    <color name="ring_item_more_cancel_text">#2fd892</color>
+    <color name="ring_item_more_sel_bg">#f3f7f6</color>
+    <color name="ring_item_number_index_text">#FFA6B1B5</color>
+    <color name="ring_item_one_key_set_bg">#fffef1</color>
+    <color name="thumbs_select">#e45e5e</color>
+
+    <!-- end 推荐页 -->
+
+    <!-- 管理页 -->
+    <color name="ring_item_downloading_color">#69928c</color>
+    <color name="ring_item_download_failed_color">#ffa874</color>
+    <color name="ring_db_selall_text_color">#818F99</color>
+    <color name="ring_db_del_menu_bg_color">#f7faf9</color>
+    <color name="ring_db_del_menu_sel_bg_color">#2fda93</color>
+    <color name="ring_db_del_menu_text_color">#939b9c</color>
+    <color name="ring_db_del_menu_sel_text_color">#2fd892</color>
+
+    <!-- end管理页 -->
+
+
+    <!-- dialog颜色 -->
+    <color name="dialog_title_color">#474747</color>
+    <color name="dialog_channel">#f0f0f0</color>
+    <color name="sure_textcolor">#2fd892</color>
+    <color name="cancle_textcolor">#939b9c</color>
+    <color name="sure_textcolor_hover">#11c379</color>
+    <color name="cancle_textcolor_hover">#a0a0a0</color>
+    <color name="message_textcolor">#a3abac</color>
+    <color name="progress_color">#2fda93</color>
+    <color name="progress_textcolor">#2fd892</color>
+    <!-- 铃声制作进度条 -->
+    <color name="make_progress_color">#79f1c0</color>
+    <color name="make_progress_textcolor">#86ffcd</color>
+    <color name="save_bg">#dfe7e7</color>
+    <color name="skin_color_divider_color">#d2d2d2</color>
+
+    <!--彩铃-->
+    <color name="skin_primary_text">#020202</color>
+    <color name="skin_common_widget">#2299ED</color>
+    <color name="skin_secondary_text">#888888</color>
+    <color name="skin_basic_disable_widget">#4C666666</color>
+    <color name="skin_primary_disable_text">#4C000000</color>
+    <color name="skin_headline_text">#1E88D4</color>
+    <color name="comon_ringtong_name_text">#333333</color>
+    <color name="comon_ringtong_num_text">#839096</color>
+    <color name="comon_ringtong_time_text">#a0a0a0</color>
+    <!--    <color name="theme_color_0_default">#FF249EF6</color>-->
+    <color name="theme_color_0_default">#06cc79</color>
+    <color name="skin_line">#24000000</color>
+
+    <!-- 首页 -->
+
+    <color name="user_name_color">#E2E2E2</color>
+    <!-- sheep_ring_tag_bg -->
+    <color name="sheep_ring_tag_bg">#474747</color>   <!-- tag的背景颜色 -->
+
+    <color name="title_color">#333333</color>   <!-- tag的背景颜色 -->
+    <color name="first_tab_text_color">#11c379</color>   <!-- tag的背景颜色 -->
+    <color name="first_tab_default_text_color">#74797B</color>   <!-- 导航栏默认字体颜色 -->
+    <color name="first_tab_line">#eff3f5</color>   <!-- 推荐页分割线-->
+    <color name="first_tab_recommed_text_color">#888888</color>   <!-- 推荐页分割线-->
+    <color name="first_tab_rank_text_color">#E0E0E0</color>   <!-- 推荐页分割线-->
+    <color name="first_tab_bg">#FFFBFCFE</color>   <!-- 推荐页分割线-->
+    <color name="first_tab_not_data">#B3B8BA</color>   <!--无数据显示的字体 -->
+    <!--  <color name="commond_default">#E1E6EB</color> -->  <!-- 推荐页分割线-->
+    <color name="commond_default">#00000000</color>   <!-- 推荐页分割线-->
+    <color name="commond_line">#eeeeee</color>   <!-- 推荐页分割线-->
+    <color name="commond_selected">#1ef3f7f6</color>   <!-- 排行榜点击效果-->
+    <color name="commond_chart_num">#FFA93a</color>   <!-- 推荐页分割线-->
+
+    <!-- login begin-->
+    <color name="com_color_text_blue">#1f82b3</color>   <!-- 登录找回密码-->
+    <color name="com_check_textColorHint">#cecece</color>   <!-- ed hint-->
+    <color name="com_check_phone_tv">#848484</color>   <!-- 注册提示号码文字 -->
+    <color name="com_get_code_tv">#B3B8BA</color>   <!-- 重新获取 -->
+    <color name="com_get_et_unenable">#c0ffffff</color>   <!-- 重新获取 -->
+    <color name="com_delect_collect_bg">#FF426A</color>   <!-- 重新获取 -->
+    <color name="com_collection_ubeanble">#9edbdedf</color>   <!--收藏下架 -->
+    <color name="com_k_song_ubeanble">#8cdbdedf</color>   <!--收藏下架 -->
+    <color name="com_copyrigh_tv">#dd6f6f</color>   <!-- 关于 -->
+
+    <color name="com_get_login_unenable">#9fffffff</color> <!-- 登录 -->
+    <!-- login end-->
+
+    <color name="highlight_green">#00b18f</color><!--高亮色调节  -->
+    <color name="linear">#DDDDDD</color>
+    <color name="pure_white">#FFFFFF</color>
+    <color name="default_image_bg">#D3D3D3</color>
+
+    <!-- 通知栏 -->
+    <color name="notification_bg">#004C4C4C</color>
+    <color name="bg_default_color">#edFFFFFF</color>
+
+    <color name="white_label_bg">#56FFFFFF</color>
+    <color name="dialog_not_clickable">#A0A0A0</color>
+    <color name="colorGregorian">#ff3388ff</color>
+    <color name="dialog_can_clickable">#333333</color>
+    <color name="colorLunar">#ffee5544</color>
+    <color name="colorPickerTextNormal">#8d8d8d</color>
+    <color name="colorPickerTextSelected">#313131</color>
+    <color name="colorIndicatorTextNormal">#FF555555</color>
+    <color name="play_tabs_menu_spility">#E8E8E8</color>
+    <color name="com_night_white_one">#333333</color><!--白色文字（高）  用户名文字颜色/系统列表文字颜色/按钮内文字颜色-->
+    <color name="com_night_white_two">#A0A0A0</color><!--白色文字（中）  脚部tab文字颜色/标题文字颜色/空页面提示文字颜色-->
+    <color name="com_night_white_three">#777777</color><!--白色文字（低）  用户个性签名颜色/年龄及星座文字颜色-->
+    <color name="com_night_white_four">#B8B8B8</color><!--白色文字（低）  用户个性签名颜色/年龄及星座文字颜色-->
+
+
+    <!-- 新铃声制作颜色 -->
+    <color name="ring_view_bg">#Edf2f1</color>
+    <color name="ring_client_text1">#2B2B2B</color>
+    <color name="ring_link">#DBDBDB</color>
+    <color name="ring_make_ll_view_bg">#eeeeee</color>
+    <color name="theme_text_color">#FF000000</color>
+    <color name="background_color">#FFFFFF</color>
+    <color name="ring_grid_line">#ee09ff99</color>
+    <color name="ring_waveform_border_line">#00b0f4</color>
+    <color name="ring_waveform_selected">#ff09ff99</color>
+    <color name="ring_waveform_unselected">#3309ff99</color>
+    <color name="ring_waveform_unselected_bkgnd_overlay">#332e2e2e</color>
+    <color name="ring_t">#2e2e2e</color>
+    <color name="ring_title">#31f818</color>
+    <color name="ring_timecode">#dda0a0a0</color>
+    <color name="ring_timecode_shadow">#aa000000</color>
+
+    <!-- end 新铃声制作颜色 -->
+
+    <color name="green3_transparent_50">#801bbbb0</color>
+    <color name="green3">#1bbbb0</color>
+    <!--page-->
+    <color name="space_image_meng">#40000000</color>
+    <color name="space_hear_board">#40FFFFFF</color>
+    <color name="person_page_bottom_bg">#F5f6f7</color>
+    <color name="person_page_reply_txclolor">#818f99</color>
+    <color name="lucky_red">#de4e40</color>
+    <color name="space_persion">#FFFEFE</color>
+    <color name="space_persion_more">#f0f3f5</color>
+    <!--UPLOAD-->
+    <color name="upload_bg">#ECF1F3</color>
+    <color name="round_bord">#ffe6e6e6</color>
+
+    <!--life list-->
+    <!-- 按钮点击后，盖上一层有透明度的黑色 -->
+    <color name="button_pressed_color">#30000000</color>
+    <color name="white_pure">#ffffffff</color>
+    <color name="user_s">#ff9d00</color>
+    <color name="user_null_gift">#C7C9CA</color>
+
+
+</resources>

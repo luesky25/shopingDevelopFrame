@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RadioGroup
+    android:orientation="horizontal"
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="50dp">
+    <RadioButton
+        android:text="首页"
+        android:id="@+id/index"
+        style="@style/tab_style"/>
+
+    <RadioButton
+        android:id="@+id/message"
+        android:text="课程"
+        style="@style/tab_style"/>
+    <RadioButton
+        android:id="@+id/shopping_car"
+        style="@style/tab_style"
+        android:text="购物车"
+        />
+    <RadioButton
+        android:id="@+id/manage"
+        style="@style/tab_style"
+        android:text="我的商城"
+        />
+</RadioGroup>

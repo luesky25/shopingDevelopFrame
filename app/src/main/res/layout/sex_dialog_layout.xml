@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mine_guess_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/transparent"
+    android:orientation="vertical" >
+
+
+
+    <LinearLayout android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@color/white">
+        <TextView android:id="@+id/man_tv"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:text="男"
+            android:textColor="#00b18f"
+            android:textSize="18sp"/>
+        <View android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#D2D1D6"/>
+        <TextView android:id="@+id/women_tv"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:text="女"
+            android:textColor="#00b18f"
+            android:textSize="18sp"/>
+        <View android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#D2D1D6"/>
+        <TextView android:id="@+id/both_tv"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:visibility="gone"
+            android:text="秘密"
+            android:textColor="#00b18f"
+            android:textSize="18sp"/>
+    </LinearLayout>
+    <LinearLayout android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
+        android:background="@color/white">
+        <TextView android:id="@+id/cancel_txt"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:text="取消"
+            android:textColor="#00b18f"
+            android:textSize="18sp"/>
+    </LinearLayout>
+</LinearLayout>

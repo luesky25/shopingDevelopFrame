@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--<style name="base_small_progressbar_style">-->
+        <!--<item name="android:maxWidth">18.0dip</item>-->
+        <!--<item name="android:maxHeight">18.0dip</item>-->
+        <!--<item name="android:indeterminateDrawable">@anim/new_loading_small_anim</item>-->
+        <!--<item name="android:minWidth">18.0dip</item>-->
+        <!--<item name="android:minHeight">18.0dip</item>-->
+        <!--<item name="android:indeterminateDuration">1500</item>-->
+        <!--<item name="android:interpolator">@android:anim/accelerate_decelerate_interpolator</item>-->
+    <!--</style>-->
+    <style name="new_loading_progressbar_style">
+        <item name="android:maxWidth">18.0dip</item>
+        <item name="android:maxHeight">18.0dip</item>
+        <item name="android:indeterminateDrawable">@anim/new_loading_small_anim</item>
+        <item name="android:minWidth">18.0dip</item>
+        <item name="android:minHeight">18.0dip</item>
+        <item name="android:indeterminateDuration">1500</item>
+        <item name="android:interpolator">@android:anim/accelerate_decelerate_interpolator</item>
+    </style>
+</resources>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="refresh_state_normal">再拉我就biubiubiu...</string>
+    <string name="refresh_state_ready">松开伦家给你啦~</string>
+    <string name="refresh_last_time">最后更新时间&#160;:&#160;%s</string>
+    <string name="refresh_state_loading">正在加载…</string>
+    <string name="loadmore_state_loading">正在加载…</string>
+    <string name="loadmore_state_no_more">加载完毕</string>
+    <string name="loadmore_state_normal">查看更多</string>
+    <string name="loadmore_state_ready">松开加载更多</string>
+    <string name="loadmore_state_fail">重新加载</string>
+    <string name="loadmore_state_empty_reload">无数据,点击重试</string>
+</resources>
