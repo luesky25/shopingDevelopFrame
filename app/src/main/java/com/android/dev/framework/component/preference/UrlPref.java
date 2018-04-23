@@ -53,4 +53,13 @@ public class UrlPref extends PreferenceOpenHelper {
      * 登录url
      */
     public final static String LOGIN_LOCAL= getBaseUrl() + "/jeecg/rest/tokens";
+    /**
+     * 黑名单测试用
+     */
+    public final static String BLACK_LIST = getBaseUrl() + "/jeecg/rest/tsBlackListController";
+    /***
+     * 注册接口
+     */
+    public final static String REGISTER_USER = getBaseUrl() + "/jeecgrest/registers";
+
 }

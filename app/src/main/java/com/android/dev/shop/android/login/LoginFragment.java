@@ -266,10 +266,10 @@ public class LoginFragment extends ShowLoadingTitleBarFragment implements HttpRe
 	@Override
 	public void onHttpSuccess(String data, HttpMessage msg) {
 		int id = msg.what;
-		
+		hideLoading();
 		switch (id) {
 			case HTTP_POST_LOGIN:
-				
+				PreferencesUtils.putString(DevApplication.getMyApplication(),PreferenceConfig.X_AUTH_TOKEN,data);
 //				RingBackMusicRespone comment = null;
 //				try {
 //					comment = ((RingBackMusicRespone<Object>) HttpRequestHelper.fromJson((String) data, new TypeToken<RingBackMusicRespone<User>>(){}.getType()));

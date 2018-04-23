@@ -1,18 +1,17 @@
 package com.android.dev.shop.android.eventbus;
 
 public class EventType {
-//	
+//
 //	/** 通知activity进行finish操作 **/
 //	public static final int EVENT_FINISH_ACTIVITY = 0x001;
-//	
-	/** 审核录音成功，通知审核UI记录数据  **/
-	public static final int EVENT_RINGTONE_SUB_SUCCESS = 0x002;
+//
+	/** test 信鸽应用内信息操作 **/
+	public static final int EVENT_XINGE_MSG_FROM_APP = 0x001;
+	/** test 信鸽应用外通知栏信息操作 **/
+	public static final int EVENT_XINGE_MSG_NOTI_FROM_APP = 0x002;
 	
 	
-	
-	/** 订购成功之后，状态应该改成使用中  **/
-	public static final int EVENT_RINGTONE_MAKE_DEFAULT_SUCCESS = 0x003;
-	
+
 	/**
 	 * 用户输入手机 验证码之后 然后更新数据
 	 */
@@ -29,7 +28,7 @@ public class EventType {
 	 * 用户收到短信校验码
 	 */
 	public  static  final int EVENT_SHOPPING_SMS_VERIFY_SUCCESS = 0x006;
-	
+
 	public  static  final int EVENT_RINGTONE_SEARCHE_TEXT_TO_REQUEST = 0x007;
 
 	/**
@@ -61,7 +60,7 @@ public class EventType {
 	 * 更新用户信息
 	 */
 	public static final int EVENT_USER_UPDATE_INFO = 0x013;
-	
+
 	/**
 	 * 登录之后更新主页
 	 */
@@ -73,8 +72,8 @@ public class EventType {
 	public static final int EVENT_UODATE_RING = 0x015;
 
 	/** session过期，通知mainActivity跳转登录页面  **/
-	public static final int EVENT_SESSION_FAIL_TO_LOGIN = 0x016;	
-	
+	public static final int EVENT_SESSION_FAIL_TO_LOGIN = 0x016;
+
 	/** 留言板点回复通知最外界面弹出软键盘  **/
 	public static final int EVENT_MESSAGE_EDITTEXT = 0x018;
 
@@ -92,7 +91,7 @@ public class EventType {
 	 * 提现后刷新我的财富页
 	 */
 	public static final int EVENT_UPDATE_MY_WEALTH = 0x020;
-	
+
 	/**
 	 * 铃声库上传铃声之后 刷新上传状态
 	 */
@@ -161,11 +160,11 @@ public class EventType {
 	 *首页tab我的消息中心小红点 (KTV+消息数+朋友数)
 	 */
 	public static final int EVENT_MSG_ALL_MESSAGE_NUMBER_RED= 0x032;
-	
+
 	/**
 	 *我的朋友红点
 	 */
-	public static final int EVENT_MSG_CONTACT_FRIEND_RED= 0x033;	
+	public static final int EVENT_MSG_CONTACT_FRIEND_RED= 0x033;
 	/**
 	 *我的朋友取消的红点
 	 */
@@ -182,9 +181,9 @@ public class EventType {
 	 * ktv 聊天信息刷新
 	 */
 	public static final int EVENT_KTV_CHART_UPDATE = 0x036;
-	
+
 	/**
-	 * 铃声播放告诉ktv的歌神榜 请勿改值 
+	 * 铃声播放告诉ktv的歌神榜 请勿改值
 	 */
 	public static final int EVENT_KTV_STOP_RING = 0x037;
 

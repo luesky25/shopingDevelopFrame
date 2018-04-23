@@ -23,6 +23,9 @@ import com.android.dev.utils.DatePref;
 import com.android.dev.utils.DateUtil;
 import com.pulltozoomview.IScrollerImpl;
 
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+
 import java.util.Date;
 
 
@@ -40,11 +43,14 @@ public abstract class SingBaseSupportFragment<L extends BaseLogic> extends Fragm
 
     protected boolean visible = false;
 
+    @Subscribe
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mLogic = creatLogic();
-        KGEventBus.register(this);
+        if(!EventBus.getDefault().isRegistered(this)){
+            KGEventBus.register(this);
+        }
     }
 
 
@@ -126,10 +132,13 @@ public abstract class SingBaseSupportFragment<L extends BaseLogic> extends Fragm
         isShow = false;
     }
 
+    @Subscribe
     @Override
     public void onDestroy() {
         super.onDestroy();
-        KGEventBus.unregister(this);
+        if(EventBus.getDefault().isRegistered(this)){
+            KGEventBus.unregister(this);
+        }
     }
 
     // 初始化views

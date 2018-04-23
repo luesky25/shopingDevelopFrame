@@ -20,12 +20,15 @@ package com.android.common.volley;
  * Exception style class encapsulating Volley errors
  */
 @SuppressWarnings("serial")
-public class VolleyError extends Exception {
+public abstract class VolleyError extends Exception {
     public final NetworkResponse networkResponse;
     private long networkTimeMs;
 
+    protected TYPE errortype;
+
     public VolleyError() {
         networkResponse = null;
+        errortype=getType();
     }
 
     public VolleyError(NetworkResponse response) {
@@ -54,4 +57,9 @@ public class VolleyError extends Exception {
     public long getNetworkTimeMs() {
        return networkTimeMs;
     }
+
+
+    public abstract TYPE getType();
+
+    public enum TYPE{UNKNOW,LOCAL,NETWORK,SERVER}
 }

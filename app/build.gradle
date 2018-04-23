@@ -20,8 +20,8 @@ android {
 
         manifestPlaceholders = [
 
-                XG_ACCESS_ID:"2100279992",
-                XG_ACCESS_KEY : "AHY1CKW4672G",
+                XG_ACCESS_ID:"2100280275",
+                XG_ACCESS_KEY : "AN3NY7H896DR",
         ]
     }
     dexOptions {
@@ -40,10 +40,10 @@ android {
 
         }
         release {
-            keyAlias 'he'
-            keyPassword 'abcd1234'
-            storeFile file('keywords.jks')
-            storePassword 'abcd1234'
+//            keyAlias 'he'
+//            keyPassword 'abcd1234'
+//            storeFile file('keywords.jks')
+//            storePassword 'abcd1234'
         }
     }
 
@@ -76,7 +76,17 @@ android {
         }
     }
 
+    lintOptions {
 
+        abortOnError false
+
+        checkReleaseBuilds false
+
+        // 防止在发布的时候出现因MissingTranslation导致Build Failed!
+
+        disable 'MissingTranslation'
+
+    }
 }
 
 dependencies {
@@ -108,3 +118,5 @@ dependencies {
     //mid包
     compile 'com.tencent.mid:mid:4.0.6-release'
 }
+
+

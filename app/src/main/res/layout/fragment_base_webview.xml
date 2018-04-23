@@ -1,6 +1,28 @@
-<?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:orientation="vertical" >
 
-</android.support.constraint.ConstraintLayout>
+    <include
+        android:id="@+id/common_title_bar"
+        layout="@layout/common_title_bar" />
+
+
+    <WebView
+        android:id="@+id/baseWebView"
+        android:layout_below="@id/common_title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <ProgressBar
+        android:id="@+id/webview_ProgressBar"
+        android:layout_below="@id/common_title_bar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:visibility="gone"
+        android:progressDrawable="@drawable/progressbar_color"
+        />
+
+</RelativeLayout>

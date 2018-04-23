@@ -1,21 +1,29 @@
 package com.android.dev.shop.android.fragment;
 
 import android.os.Bundle;
-import android.os.Message;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
-import android.view.LayoutInflater;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
-import android.view.ViewGroup;
 
-import com.android.dev.framework.component.base.BaseWorkerFragment;
+import com.android.common.volley.VolleyError;
 import com.android.dev.shop.R;
+import com.android.dev.shop.android.adapter.ShoppingListAdapter;
+import com.android.dev.shop.android.base.temple.JsonCallback;
+import com.android.dev.shop.android.base.temple.TDataListFragment;
+import com.android.dev.shop.android.logic.ShopLogic;
+import com.android.dev.shop.android.publisher.ShopPublisher;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 /**
  * Created by Administrator on 2018-03-25.
  */
 
-public class ShoppingListFragment extends BaseWorkerFragment{
+public class ShoppingListFragment extends TDataListFragment<ShopLogic,String,ShoppingListAdapter> {
+
+
 
     private int type;
     public static final int TYPE_SHOP = 1;
@@ -23,10 +31,7 @@ public class ShoppingListFragment extends BaseWorkerFragment{
 
     private static ShoppingListFragment mfragment;
     public static ShoppingListFragment getInstance(int type){
-
-        if(mfragment==null){
             mfragment = new ShoppingListFragment();
-        }
         Bundle bundle = new Bundle();
         bundle.putInt("type",type);
         mfragment.setArguments(bundle);
@@ -43,15 +48,35 @@ public class ShoppingListFragment extends BaseWorkerFragment{
         return mfragment;
     }
 
-    @Override
-    protected void handleBackgroundMessage(Message msg) {
 
+    @Override
+    protected ShopLogic creatLogic() {
+        return new ShopLogic(getTag(),this);
     }
 
-    @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_list_model,null);
+    protected boolean needLogin() {
+        return false;
+    }
+
+    @Override
+    protected int createContetntView() {
+        return R.layout.tdata_list_layout;
+    }
+
+    @Override
+    protected RecyclerView.LayoutManager getDataLayoutManager() {
+        return new LinearLayoutManager(getActivity());
+    }
+
+    @Override
+    protected void toGetDataList() {
+            mLogic.toGetDataList();
+    }
+
+    @Override
+    protected ShoppingListAdapter getDataAdapter() {
+        return new ShoppingListAdapter(getActivity(),mDataList);
     }
 
     @Override

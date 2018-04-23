@@ -21,27 +21,27 @@ public class SingJsonHelper {
     @CheckResult
     public UIGeter parseSuccessAndMessage(JSONObject responseJson) {
         UIGeter geter = new UIGeter();
-        geter.setSuccess(responseJson.optBoolean("success"));
+        geter.setSuccess(responseJson.optBoolean("ok"));
         geter.setMessage(responseJson.optString("message"));
-        geter.setReturnCode(responseJson.optInt("code",-1));
+        geter.setReturnCode(responseJson.optInt("respCode",-1));
         return geter;
     }
 
     @CheckResult
     public UIGeter parseJson(JSONObject responseJson) {
         UIGeter geter = new UIGeter();
-        if (!responseJson.isNull("errcode")) {
-            geter.setSuccess(responseJson.optInt("errcode", 0) == 1);
-            geter.setReturnCode(responseJson.optInt("errcode", 1));
+        if (!responseJson.isNull("respCode")) {
+            geter.setSuccess(responseJson.optInt("respCode", 0) == 1);
+            geter.setReturnCode(responseJson.optInt("respCode", -1));
         }
-        geter.setMessage(responseJson.optString("msg"));
+        geter.setMessage(responseJson.optString("message"));
         return geter;
     }
 
     @CheckResult
     public UIGeter parseUgcJson(JSONObject responseJson) {
         UIGeter geter = new UIGeter();
-        int code = responseJson.optInt("code", -1);
+        int code = responseJson.optInt("respCode", -1);
         geter.setSuccess(code == 0 ? true : false);
         geter.setMessage(responseJson.optString("message"));
         geter.setReturnCode(code);

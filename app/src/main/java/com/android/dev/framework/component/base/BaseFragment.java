@@ -11,6 +11,10 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Toast;
 
+import com.android.dev.shop.android.eventbus.KGEventBus;
+
+import org.greenrobot.eventbus.EventBus;
+
 /**
  * 描述:所有Fragment的父类,提供刷新UI的Handler
  *
@@ -20,6 +24,8 @@ import android.widget.Toast;
 public class BaseFragment extends Fragment {
 
 //	protected View mView;
+
+	public boolean isSetUpEventBus = false;
 
 	protected Activity mActivity;
 
@@ -51,6 +57,9 @@ public class BaseFragment extends Fragment {
 		mIsFirstLoad = true;
 		initData();
 		setListener();
+		if(isSetUpEventBus && !EventBus.getDefault().isRegistered(this)){
+			KGEventBus.register(this);
+		}
 	}
 
 	@Override
@@ -229,5 +238,11 @@ public class BaseFragment extends Fragment {
 	public void onLeave() {
 	}
 
-
+	@Override
+	public void onDestroy() {
+		super.onDestroy();
+		if(isSetUpEventBus && EventBus.getDefault().isRegistered(this)){
+			KGEventBus.unregister(this);
+		}
+	}
 }

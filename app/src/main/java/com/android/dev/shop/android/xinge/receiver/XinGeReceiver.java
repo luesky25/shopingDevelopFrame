@@ -3,9 +3,13 @@ package com.android.dev.shop.android.xinge.receiver;
 import android.app.NotificationManager;
 import android.content.Context;
 import android.content.Intent;
+import android.text.TextUtils;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.android.dev.shop.android.eventbus.EventMessage;
+import com.android.dev.shop.android.eventbus.EventType;
+import com.android.dev.shop.android.eventbus.KGEventBus;
 import com.android.dev.shop.android.xinge.common.NotificationService;
 import com.android.dev.shop.android.xinge.model.XGNotification;
 import com.tencent.android.tpush.XGPushBaseReceiver;
@@ -53,6 +57,11 @@ public class XinGeReceiver extends XGPushBaseReceiver {
         NotificationService.getInstance(context).save(notific);
         context.sendBroadcast(intent);
         show(context, "您有1条新消息, " + "通知被展示 ， " + notifiShowedRlt.toString());
+        if(!TextUtils.isEmpty(notifiShowedRlt.toString())){
+            EventMessage msg = new EventMessage(EventType.EVENT_XINGE_MSG_NOTI_FROM_APP);
+            msg.obj1 = notifiShowedRlt.toString();
+            KGEventBus.post(msg);
+        }
         Log.d("LC", "+++++++++++++++++++++++++++++展示通知的回调");
     }
 
@@ -193,6 +202,11 @@ public class XinGeReceiver extends XGPushBaseReceiver {
         }
         Log.d("LC", "++++++++++++++++透传消息");
         // APP自主处理消息的过程...
+        if(!TextUtils.isEmpty(text)){
+            EventMessage msg = new EventMessage(EventType.EVENT_XINGE_MSG_FROM_APP);
+            msg.obj1 = text;
+            KGEventBus.post(msg);
+        }
         Log.d(LogTag, text);
         show(context, text);
     }

@@ -1,6 +1,8 @@
 package com.android.dev.shop.android.base.temple;
 
 
+import com.android.common.volley.VolleyError;
+
 import org.json.JSONObject;
 
 public interface JsonCallback {

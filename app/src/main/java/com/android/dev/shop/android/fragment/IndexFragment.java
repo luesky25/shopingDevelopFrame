@@ -12,9 +12,20 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
+import com.android.common.http.utils.PreferencesUtils;
 import com.android.dev.framework.component.base.BaseWorkerFragment;
+import com.android.dev.shop.PreferenceConfig;
 import com.android.dev.shop.R;
+import com.android.dev.shop.android.base.BaseWorkerOnClickFragment;
+import com.android.dev.shop.android.eventbus.EventBusCallback;
+import com.android.dev.shop.android.eventbus.EventMessage;
+import com.android.dev.shop.android.eventbus.EventType;
+import com.android.dev.shop.android.eventbus.KGEventBus;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,14 +34,13 @@ import java.util.List;
  * Created by Administrator on 2018-03-25.
  */
 
-public class IndexFragment extends BaseWorkerFragment {
-
+public class IndexFragment extends BaseWorkerOnClickFragment implements EventBusCallback {
     private RelativeLayout color_tab;
     private TabLayout tabLayout;
 
     private ViewPager pager;
 
-    private List<ShoppingListFragment> mFragmentList;
+    private List<Fragment> mFragmentList;
 
     private int currentPosition = 0;
 
@@ -63,28 +73,30 @@ public class IndexFragment extends BaseWorkerFragment {
         tabLayout = (TabLayout) v.findViewById(R.id.ring_title_bar);
 
 
-        mFragmentList = new ArrayList<ShoppingListFragment>();
-//        ShoppingListFragment shoppingListFragment = ShoppingListFragment.getInstance(ShoppingListFragment.TYPE_SHOP);
-//        ShoppingListFragment courseListFragment = ShoppingListFragment.getInstance(ShoppingListFragment.TYPE_COURSE);
-//        mFragmentList.add(shoppingListFragment);
-//        mFragmentList.add(courseListFragment);
+        mFragmentList = new ArrayList<Fragment>();
+        ShoppingListFragment shoppingListFragment = ShoppingListFragment.getInstance(ShoppingListFragment.TYPE_SHOP);
+        ShoppingListFragment courseListFragment = ShoppingListFragment.getInstance(ShoppingListFragment.TYPE_COURSE);
+        mFragmentList.add(shoppingListFragment);
+        mFragmentList.add(courseListFragment);
         List<Integer> types = new ArrayList<>();
         types.add(ShoppingListFragment.TYPE_SHOP);
         types.add(ShoppingListFragment.TYPE_COURSE);
         mCategoryList = new ArrayList<>();
         mCategoryList.add("课程");
         mCategoryList.add("商品");
-        adapter = new MyViewPageAdapter(getChildFragmentManager(), mFragmentList,types);
+        adapter = new MyViewPageAdapter(getChildFragmentManager(), mFragmentList);
         pager.setAdapter(adapter);
         pager.setOffscreenPageLimit(adapter.getCount());
+        tabLayout.addTab(tabLayout.newTab().setText(mCategoryList.get(0)));
+        tabLayout.addTab(tabLayout.newTab().setText(mCategoryList.get(1)));
         tabLayout.setupWithViewPager(pager);
 //        tabLayout.getTabAt(0).setText("课程");
 //        for (int i = 1; i <= mCategoryList.size(); i++) {
 //            tabLayout.getTabAt(i).setText(mCategoryList.get(i - 1));
 //        }
-//
-////		tabLayout.getTabAt(2).setText(tabTitles[2]);
-//        tabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
+
+//		tabLayout.getTabAt(2).setText(tabTitles[2]);
+        tabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
 
 
         pager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
@@ -106,37 +118,39 @@ public class IndexFragment extends BaseWorkerFragment {
         });
     }
 
+    @Subscribe
+    @Override
+    public void onEventMainThread(EventMessage msg) {
+
+        TextView tv;
+        switch (msg.what) {
+            case EventType.EVENT_XINGE_MSG_FROM_APP:
+                tv = (TextView) getView().findViewById(R.id.test);
+                tv.setVisibility(View.VISIBLE);
+                tv.setText("当前设备token"+ PreferencesUtils.getString(getContext(), PreferenceConfig.XINGE_PHONE_TOKEN,"")+"应用内信息" + (String) msg.obj1);
+                break;
+            case EventType.EVENT_XINGE_MSG_NOTI_FROM_APP:
+                 tv = (TextView) getView().findViewById(R.id.test);
+                tv.setVisibility(View.VISIBLE);
+                tv.setText("当前设备token"+ PreferencesUtils.getString(getContext(), PreferenceConfig.XINGE_PHONE_TOKEN,"")+"应用外通知栏信息" + (String) msg.obj1);
+
+                break;
+        }
+    }
+
 
     class MyViewPageAdapter extends FragmentPagerAdapter {
 
-        List<ShoppingListFragment> fragmentList = new ArrayList<ShoppingListFragment>();
-        List<Integer> typeList = new ArrayList<>();
+        List<Fragment> fragmentList = new ArrayList<Fragment>();
 
-        public MyViewPageAdapter(FragmentManager fm, List<ShoppingListFragment> fragmentList,List<Integer> typeList) {
+        public MyViewPageAdapter(FragmentManager fm, List<Fragment> fragmentList) {
             super(fm);
             this.fragmentList = fragmentList;
-            this.typeList = typeList;
         }
 
-        private List<Fragment> pages;
-
-        //...
-
+        @Override
         public Fragment getItem(int position) {
-            Fragment page = null;
-            if (pages.size() > position) {
-                page = pages.get(position);
-                if (page != null) {
-                    return page;
-                }
-            }
-            while (position >= pages.size()) {
-                pages.add(null);
-            }
-            page = ShoppingListFragment.newPage(mFragmentList.get(position), typeList.get(position));
-            pages.set(position, page);
-            return page;
-
+            return fragmentList.get(position);
         }
 
         @Override
@@ -144,6 +158,6 @@ public class IndexFragment extends BaseWorkerFragment {
             return fragmentList.size();
         }
 
-
     }
+
 }

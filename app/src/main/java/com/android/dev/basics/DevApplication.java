@@ -2,7 +2,6 @@ package com.android.dev.basics;
 
 import android.app.Activity;
 import android.content.pm.PackageManager;
-import android.content.res.Resources;
 import android.os.Process;
 
 import com.android.common.http.utils.PreferencesUtils;
@@ -45,7 +44,7 @@ public class DevApplication extends BaseApplication {
 
     private void init(){
         RequestManager.init(this);
-        initXinge();
+//        initXinge();
     }
 
     public static DevApplication getMyApplication(){
@@ -162,7 +161,7 @@ public class DevApplication extends BaseApplication {
             @Override
             public void onSuccess(Object data, int flag) {
             //token在设备卸载重装的时候有可能会变
-                PreferencesUtils.putString(getApplicationContext(),PreferenceConfig.XINGE_PHONE_TOKEN,data)
+                PreferencesUtils.putString(getApplicationContext(),PreferenceConfig.XINGE_PHONE_TOKEN, (String) data);
                 KGLog.d("TPush", "注册成功，设备token为：" + data);
             }
             @Override

@@ -11,6 +11,7 @@ import com.android.dev.shop.PreferenceConfig;
 import com.android.dev.shop.android.activity.CheckActivity;
 import com.android.dev.shop.android.eventbus.EventType;
 import com.android.dev.shop.android.eventbus.KGEventBus;
+import com.android.dev.shop.android.webview.WebViewActivity;
 
 /**
  * Created by Administrator on 2018-03-25.
@@ -31,6 +32,19 @@ public class ActivityUtils {
         if (bundle != null)
             intentShare.putExtras(bundle);
         formActivity.startActivityForResult(intentShare, RESULT_CODE);
+    }
+
+    /**
+     * 去 活动webView界面
+     *
+     * @param formActivity
+     * @param url          url
+     * @param isFinish
+     */
+    public static void gotoWebViewActivity(Context formActivity, String url, boolean isFinish) {
+        Bundle bundle = new Bundle();
+        bundle.putString(WebViewActivity.KEY_URL, url);
+        gotoActivity(formActivity, WebViewActivity.class, bundle, isFinish);
     }
 
     /**

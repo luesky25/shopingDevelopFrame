@@ -4,6 +4,7 @@ import android.text.TextUtils;
 
 
 import com.android.common.utils.KGLog;
+import com.android.common.volley.VolleyError;
 import com.android.dev.shop.R;
 
 import org.json.JSONException;

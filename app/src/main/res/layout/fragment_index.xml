@@ -12,7 +12,11 @@
         <android.support.design.widget.TabLayout
             android:id="@+id/ring_title_bar"
             style="@style/MyCustomTabLayout"
-            android:layout_width="match_parent"
+            android:layout_centerInParent="true"
+            app:tabGravity="center"
+            android:foregroundGravity="center"
+            android:layout_centerHorizontal="true"
+            android:layout_width="200dp"
             app:tabIndicatorColor ="@color/first_tab_text_color"
             />
 
@@ -30,4 +34,13 @@
         android:id="@+id/viewpager"
         android:layout_height="match_parent"></android.support.v4.view.ViewPager>
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/transparent"
+        android:visibility="gone"
+        android:gravity="center"
+        android:textColor="@color/green3"
+        android:textSize="22sp"
+        android:id="@+id/test"/>
 </RelativeLayout>

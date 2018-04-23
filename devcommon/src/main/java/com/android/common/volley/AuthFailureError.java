@@ -55,4 +55,9 @@ public class AuthFailureError extends VolleyError {
         }
         return super.getMessage();
     }
+
+    @Override
+    public TYPE getType() {
+        return TYPE.NETWORK;
+    }
 }

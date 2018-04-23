@@ -256,7 +256,12 @@ public class HttpRequestManagerImpl implements IHttpUploadManager,IHttpUserManag
 
     @Override
     public HttpStringRequest registerUser(String phone, String checkCode, String password, String imageHash, String imageName, String nickname, String user_sex, HttpRequestHelper.IHttpResponseListener<String> listener, HttpMessage msg) {
-        return null;
+        final Map<String, String> map = getParamsMap();
+        map.put("mobile", phone);
+        map.put("password", password);
+        final String url = UrlPref.REGISTER_USER+getGetParamsString(map);
+        return HttpRequestHelper.getRequestUsingString(HttpRequestHelper.POST, url, null, null,
+                listener, msg);
     }
 
     @Override

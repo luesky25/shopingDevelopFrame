@@ -21,22 +21,22 @@ import com.android.dev.utils.StringUtils;
 import java.util.List;
 
 public class BaseWorkerShowFragmentActivity extends BaseWorkerFragmentActivity {
-	
+
 	private static final String tag = BaseWorkerShowFragmentActivity.class.getSimpleName();
 	private FragmentManager mManager;
-	
+
 	protected boolean needAotohideKey = true;
-	
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.common_activity_layout);
 		KGLog.i("net168", "onCreata " + this.getClass().getSimpleName());
 	}
-	
+
 	@Override
 	protected void handleBackgroundMessage(Message msg) {}
-	
+
 	/**
 	 * 返回可用层级
 	 * @return
@@ -69,7 +69,7 @@ public class BaseWorkerShowFragmentActivity extends BaseWorkerFragmentActivity {
 		KGLog.i(tag, "现在加载的是第" + (count + 1) + "层布局");
 		return layoutRes;
 	}
-	
+
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		super.onActivityResult(requestCode, resultCode, data);
@@ -81,46 +81,46 @@ public class BaseWorkerShowFragmentActivity extends BaseWorkerFragmentActivity {
 				f.onActivityResult(requestCode, resultCode, data);
 		}
 	}
-	
-	@Override
-	public boolean onKeyDown(int keyCode, KeyEvent event) {
-		if (keyCode == KeyEvent.KEYCODE_BACK) {
-			if (event.getAction() == KeyEvent.ACTION_DOWN) {
-				List<Fragment> fragments = getSupportFragmentManager().getFragments();
-				if (fragments != null && fragments.size() >= 1) {
-					Fragment item = null;
-					for (int i = fragments.size() - 1; i >= 0; i--) {
-						item = fragments.get(i);
-						
-//						if (item != null && item instanceof CommonTitleBarFragment)//等公共标题fragment 写好 再加入
-//							break;
-					}
-					//如果fragment存在loading状态，取消loading不退栈，回调loading状态的fragment的onLoadingCancel()方法
-//					先不放开该功能
-//					if (item != null && item instanceof ShowLoadingTitleBarFragment) {
-//						ShowLoadingTitleBarFragment f = (ShowLoadingTitleBarFragment) item;
-//						if (f.isShowLoading()) {
-//							f.cancelLoading();
-//							return true;
-//						}
+
+//	@Override
+//	public boolean onKeyDown(int keyCode, KeyEvent event) {
+//		if (keyCode == KeyEvent.KEYCODE_BACK) {
+//			if (event.getAction() == KeyEvent.ACTION_DOWN) {
+//				List<Fragment> fragments = getSupportFragmentManager().getFragments();
+//				if (fragments != null && fragments.size() >= 1) {
+//					Fragment item = null;
+//					for (int i = fragments.size() - 1; i >= 0; i--) {
+//						item = fragments.get(i);
+//
+////						if (item != null && item instanceof CommonTitleBarFragment)//等公共标题fragment 写好 再加入
+////							break;
 //					}
-					
-					//如果fragment都不在loading状态，则是退栈操作
-//					if (item != null && item instanceof CommonTitleBarFragment)
-//						((CommonTitleBarFragment)item).runOnTabLeft();
-//					else {
-						if (getSupportFragmentManager().getBackStackEntryCount() != 0)
-							FragmentUtils.popBackStackAndNotify(getSupportFragmentManager());
-						else
-							finish();
-					}
-//				}
-			}
-			return true;
-		}
-		return super.onKeyDown(keyCode, event);
-	}
-	
+//					//如果fragment存在loading状态，取消loading不退栈，回调loading状态的fragment的onLoadingCancel()方法
+////					先不放开该功能
+////					if (item != null && item instanceof ShowLoadingTitleBarFragment) {
+////						ShowLoadingTitleBarFragment f = (ShowLoadingTitleBarFragment) item;
+////						if (f.isShowLoading()) {
+////							f.cancelLoading();
+////							return true;
+////						}
+////					}
+//
+//					//如果fragment都不在loading状态，则是退栈操作
+////					if (item != null && item instanceof CommonTitleBarFragment)
+////						((CommonTitleBarFragment)item).runOnTabLeft();
+////					else {
+//						if (getSupportFragmentManager().getBackStackEntryCount() != 0)
+//							FragmentUtils.popBackStackAndNotify(getSupportFragmentManager());
+//						else
+//							finish();
+//					}
+////				}
+//			}
+//			return true;
+//		}
+//		return super.onKeyDown(keyCode, event);
+//	}
+
 	/**
 	 * 自动隐藏软键盘输入框
 	 */
@@ -131,7 +131,7 @@ public class BaseWorkerShowFragmentActivity extends BaseWorkerFragmentActivity {
 		}
 		return super.dispatchTouchEvent(ev);
 	}
-	
+
 	@Override
 	protected void onDestroy() {
 		super.onDestroy();
@@ -141,17 +141,17 @@ public class BaseWorkerShowFragmentActivity extends BaseWorkerFragmentActivity {
 		RequestManager.cancelAll(StringUtils.getSimpleName(this));
 	}
 
-	
+
 	@Override
 	protected void onSaveInstanceState(Bundle outState) {
 		super.onSaveInstanceState(outState);
 	}
-	
+
 	@Override
 	protected void onRestoreInstanceState(Bundle savedInstanceState) {
 		super.onRestoreInstanceState(savedInstanceState);
 	}
-	
-	
-	
+
+
+
 }

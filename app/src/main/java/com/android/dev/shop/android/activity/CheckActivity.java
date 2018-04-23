@@ -7,6 +7,7 @@ import android.support.v4.app.FragmentManager;
 
 import com.android.dev.shop.android.base.BaseWorkerShowFragmentActivity;
 import com.android.dev.shop.android.login.LoginFragment;
+import com.android.dev.shop.android.login.RegisterCheckPhoneFragment;
 import com.android.dev.shop.android.login.RegisterPasswordDateFragment;
 import com.android.dev.shop.android.login.RegisterPasswordFragment;
 import com.android.dev.shop.android.utils.FragmentUtils;
@@ -87,9 +88,9 @@ public class CheckActivity extends BaseWorkerShowFragmentActivity {
 	 * 加载手机验证界面
 	 */
 	public void addCheckPhoneFragment(int type) {
-//		Fragment fragment = RegisterCheckPhoneFragment.getInstance(type);
-//		FragmentUtils.replaceFragmentWithStack(mManager, getFramentLayout(),
-//				fragment);
+		Fragment fragment = RegisterCheckPhoneFragment.getInstance(type);
+		FragmentUtils.replaceFragmentWithStack(mManager, getFramentLayout(),
+				fragment);
 	}
 
 	/**

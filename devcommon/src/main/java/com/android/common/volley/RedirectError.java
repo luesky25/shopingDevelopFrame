@@ -15,4 +15,9 @@ public class RedirectError extends VolleyError {
     public RedirectError(final NetworkResponse response) {
         super(response);
     }
+
+    @Override
+    public TYPE getType() {
+        return TYPE.NETWORK;
+    }
 }

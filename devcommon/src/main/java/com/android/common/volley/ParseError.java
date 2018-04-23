@@ -30,4 +30,9 @@ public class ParseError extends VolleyError {
     public ParseError(Throwable cause) {
         super(cause);
     }
+
+    @Override
+    public TYPE getType() {
+        return TYPE.SERVER;
+    }
 }

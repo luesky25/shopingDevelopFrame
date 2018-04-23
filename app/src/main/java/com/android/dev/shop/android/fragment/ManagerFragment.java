@@ -1,5 +1,6 @@
 package com.android.dev.shop.android.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Message;
 import android.support.annotation.Nullable;
@@ -13,6 +14,8 @@ import android.widget.RelativeLayout;
 import com.android.dev.basics.DevApplication;
 import com.android.dev.framework.component.base.BaseWorkerFragment;
 import com.android.dev.shop.R;
+import com.android.dev.shop.android.news.NewsDetailActivity;
+import com.android.dev.shop.manage.PersonDetailActivity;
 import com.android.dev.utils.ActivityUtils;
 
 import java.util.ArrayList;
@@ -40,6 +43,13 @@ public class ManagerFragment extends BaseWorkerFragment implements View.OnClickL
         listView.setAdapter(new ArrayAdapter<String>(getActivity(),android.R.layout.activity_list_item,new ArrayList<String>()));
         meanage_login_content = head.findViewById(R.id.meanage_login_content);
         meanage_login_content.setOnClickListener(this);
+        view.findViewById(R.id.setting_ll).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getActivity(), PersonDetailActivity.class);
+                getActivity().startActivity(i);
+            }
+        });
     }
 
     @Nullable

@@ -32,4 +32,9 @@ public class NetworkError extends VolleyError {
     public NetworkError(NetworkResponse networkResponse) {
         super(networkResponse);
     }
+
+    @Override
+    public TYPE getType() {
+        return TYPE.NETWORK;
+    }
 }

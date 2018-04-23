@@ -8,6 +8,8 @@ import android.os.HandlerThread;
 import android.os.Looper;
 import android.os.Message;
 
+import com.android.dev.shop.http.biz.HttpManagerFactory;
+
 /**
  * 描述 具备后台线程和UI线程更新
  *
@@ -15,14 +17,21 @@ import android.os.Message;
  * @since 2013-12-2 上午9:45:00
  */
 public abstract class BaseWorkerActivity extends BaseActivity {
+    /**
+     * 请求工厂类
+     */
+    private HttpManagerFactory mFactory;
+    /**
+     * 异步请求
+     */
+    private HandlerThread mHandlerThread;
 
-    protected HandlerThread mHandlerThread;
-
-    protected BackgroundHandler mBackgroundHandler;
+    private BackgroundHandler mBackgroundHandler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        mFactory = new HttpManagerFactory(this);
         mHandlerThread = new HandlerThread("activity worker:" + getClass().getSimpleName());
         mHandlerThread.start();
         mBackgroundHandler = new BackgroundHandler(mHandlerThread.getLooper());
@@ -31,10 +40,18 @@ public abstract class BaseWorkerActivity extends BaseActivity {
     @Override
     public void onDestroy() {
         super.onDestroy();
+        if(mFactory!=null){
+            mFactory.cancelAll();
+        }
         if (mBackgroundHandler != null && mBackgroundHandler.getLooper() != null) {
             mBackgroundHandler.getLooper().quit();
         }
     }
+
+    public HttpManagerFactory getVolleyFactory() {
+        return mFactory;
+    }
+
 
     /**
      * 处理后台操作

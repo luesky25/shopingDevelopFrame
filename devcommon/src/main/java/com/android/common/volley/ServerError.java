@@ -25,6 +25,11 @@ public class ServerError extends VolleyError {
         super(networkResponse);
     }
 
+    @Override
+    public TYPE getType() {
+        return TYPE.SERVER;
+    }
+
     public ServerError() {
         super();
     }
